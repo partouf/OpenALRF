@@ -1,14 +1,14 @@
 # Project: OpenALRF
 
+OBJ_COMMON = Common/Timing.o
 OBJ_SYSTEM = System/System.o System/SystemLinux.o
+OBJ_COMM = Communication/Communication.o
+OBJ_COMMAND = Command/CommandQueue.o
 OBJ_SENSOR1D = Sensor1D/Sensor1D.o
 OBJ_PILOT = Pilot/RemotePilot.o
-OBJ_COMM = Communication/Communication.o
-OBJ_COMMON = Common/Timing.o
-OBJ_COMMAND = Command/CommandQueue.o
 OBJ_CAMERA = Camera/MainCamera.o
 
-OBJ = $(OBJ_OS) $(OBJ_COMMON) $(OBJ_DEVICES)
+OBJ = $(OBJ_COMMON) $(OBJ_SYSTEM) $(OBJ_COMM) $(OBJ_COMMAND) $(OBJ_SENSOR1D) $(OBJ_PILOT) $(OBJ_CAMERA)
 LINKOBJ = $(OBJ)
 LIBS = 
 BIN  = libOpenALRF.a
