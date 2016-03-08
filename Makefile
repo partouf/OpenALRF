@@ -28,7 +28,7 @@ $(BIN): $(LINKOBJ)
 	ranlib $(BIN)
 
 System/System.o: System/System.cpp
-	$(CXX) -c System/System.cpp -o OS/System.o $(CXXFLAGS)
+	$(CXX) -c System/System.cpp -o System/System.o $(CXXFLAGS)
 
 System/SystemLinux.o: System/SystemLinux.cpp
 	$(CXX) -c System/SystemLinux.cpp -o OS/SystemLinux.o $(CXXFLAGS)
