@@ -31,7 +31,7 @@ System/System.o: System/System.cpp
 	$(CXX) -c System/System.cpp -o System/System.o $(CXXFLAGS)
 
 System/SystemLinux.o: System/SystemLinux.cpp
-	$(CXX) -c System/SystemLinux.cpp -o OS/SystemLinux.o $(CXXFLAGS)
+	$(CXX) -c System/SystemLinux.cpp -o System/SystemLinux.o $(CXXFLAGS)
 
 Sensor1D/Sensor1D.o: Sensor1D/Sensor1D.cpp
 	$(CXX) -c Sensor1D/Sensor1D.cpp -o Sensor1D/Sensor1D.o $(CXXFLAGS)
