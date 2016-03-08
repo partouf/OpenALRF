@@ -4,5 +4,5 @@
 
 namespace OpenALRF
 {
-   typedef __int64 timestamp_t;
+   typedef int64_t timestamp_t;
 };
