@@ -14,9 +14,7 @@ namespace OpenALRF
       SystemLinux();
 
       void RebootNow() override;
-
-      bool HasValidActiveNetwork() override;
-
+      
       void RestartNetworkInterface(const std::string AInterfaceName) override;
 
       bool ShouldQuit() override;

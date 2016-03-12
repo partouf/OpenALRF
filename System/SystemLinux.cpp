@@ -1,7 +1,6 @@
 #include "SystemLinux.h"
 
 #include <cstdlib>
-#include <Jumpropes/Functions.h>
 
 void OpenALRF::SystemLinux::SystemCmd(std::string ACommand)
 {
@@ -24,23 +23,6 @@ void OpenALRF::SystemLinux::RebootNow()
    SystemCmd(Command.c_str());
 
    RebootTriggered = true;
-}
-
-bool OpenALRF::SystemLinux::HasValidActiveNetwork()
-{
-   bool HasNetwork = false;
-
-   auto list = Jumpropes::ListNetworkInterfaces();
-   for (auto netif : list)
-   {
-      if (!netif.IP.ip.startsWith_ansi("127.") && !netif.IP.ip.startsWith_ansi("0.") && !netif.IP.ip.startsWith_ansi("169.254."))
-      {
-         HasNetwork = true;
-         break;
-      }
-   }
-
-   return HasNetwork;
 }
 
 void OpenALRF::SystemLinux::RestartNetworkInterface(const std::string AInterfaceName)
