@@ -1,12 +1,14 @@
 #include "SystemLinux.h"
 
 #include <cstdlib>
+#include <iostream>
 
 void OpenALRF::SystemLinux::SystemCmd(std::string ACommand)
 {
 #ifdef GF_OS_WIN32
    std::cout << ACommand << std::endl;
 #else
+   std::cout << ACommand << std::endl;
    ::system(ACommand.c_str());
 #endif
 }
@@ -18,7 +20,7 @@ OpenALRF::SystemLinux::SystemLinux() : ISystem()
 
 void OpenALRF::SystemLinux::RebootNow()
 {
-   std::string Command = "sudo reboot now";
+   std::string Command = "reboot now";
 
    SystemCmd(Command.c_str());
 
@@ -27,7 +29,7 @@ void OpenALRF::SystemLinux::RebootNow()
 
 void OpenALRF::SystemLinux::RestartNetworkInterface(const std::string AInterfaceName)
 {
-   std::string Command = "sudo ifdown " + AInterfaceName + " && sudo ifup " + AInterfaceName;
+   std::string Command = "ifdown " + AInterfaceName + " && ifup " + AInterfaceName;
 
    SystemCmd(Command.c_str());
 }

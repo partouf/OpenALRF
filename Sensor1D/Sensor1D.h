@@ -2,6 +2,7 @@
 
 #include <string>
 #include "../Common/Types.h"
+#include "../System/Module.h"
 
 namespace OpenALRF
 {
@@ -11,7 +12,7 @@ namespace OpenALRF
       double Data;
    };
 
-   class ISensor1D
+   class ISensor1D : public IModule
    {
    protected:
       std::string Identifier;

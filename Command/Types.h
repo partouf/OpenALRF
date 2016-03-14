@@ -9,7 +9,7 @@ namespace OpenALRF
    
    enum action_t {
       actVoid = 0,
-      actSystemReboot = 1, actSystemRestartNetIF = 2,
+      actSystemReboot = 1, actSystemRestartNetIF = 2, actSystemInfoReport = 3,
       actRemotePilotForward = 11, actRemotePilotBackward = 12, actRemotePilotLeft = 13, actRemotePilotRight = 14, actRemotePilotStop = 15,
       actCameraCapture = 21
    };

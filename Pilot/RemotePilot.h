@@ -1,13 +1,14 @@
 #pragma once
 
 #include <cstdint>
+#include "../System/Module.h"
 
 namespace OpenALRF
 {
    typedef int32_t distance_t;
    typedef int8_t degrees_t;
 
-   class IRemotePilot
+   class IRemotePilot : public IModule
    {
    public:
       virtual void Forward(distance_t ADistance) = 0;

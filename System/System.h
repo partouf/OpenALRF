@@ -1,10 +1,11 @@
 #pragma once
 
 #include <string>
+#include "Module.h"
 
 namespace OpenALRF
 {
-   class ISystem
+   class ISystem : public IModule
    {
    public:
       virtual void RebootNow() = 0;
