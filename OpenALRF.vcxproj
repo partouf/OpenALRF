@@ -21,6 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CF3E4785-44DF-46DC-B846-9568B8ADBCF6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -34,12 +35,12 @@
     <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
@@ -101,23 +102,32 @@
     <ClCompile Include="command\CommandQueue.cpp" />
     <ClCompile Include="common\Timing.cpp" />
     <ClCompile Include="communication\Communication.cpp" />
+    <ClCompile Include="ImageProcessing\Software.cpp" />
     <ClCompile Include="pilot\RemotePilot.cpp" />
     <ClCompile Include="sensor1d\Sensor1D.cpp" />
     <ClCompile Include="system\System.cpp" />
     <ClCompile Include="system\SystemLinux.cpp" />
+    <ClCompile Include="World\AStarMapNode.cpp" />
+    <ClCompile Include="World\Map.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AStar\fsa.h" />
+    <ClInclude Include="AStar\stlastar.h" />
     <ClInclude Include="camera\MainCamera.h" />
     <ClInclude Include="command\CommandQueue.h" />
-    <ClInclude Include="command\Types.h" />
+    <ClInclude Include="Common\CapturedImage.h" />
     <ClInclude Include="common\Timing.h" />
-    <ClInclude Include="common\Types.h" />
+    <ClInclude Include="Common\Types.h" />
     <ClInclude Include="communication\Communication.h" />
+    <ClInclude Include="ImageProcessing\Software.h" />
     <ClInclude Include="pilot\AutoPilot.h" />
     <ClInclude Include="pilot\RemotePilot.h" />
     <ClInclude Include="sensor1d\Sensor1D.h" />
     <ClInclude Include="system\System.h" />
     <ClInclude Include="system\SystemLinux.h" />
+    <ClInclude Include="World\AStarMapNode.h" />
+    <ClInclude Include="World\Map.h" />
+    <ClInclude Include="World\MapTypes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

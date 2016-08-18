@@ -13,6 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Header Files\AStar">
+      <UniqueIdentifier>{53111540-34ec-4760-9314-7030b5f5a04f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\World">
+      <UniqueIdentifier>{ad210e0e-a461-4ebd-82e0-774dd9824d94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{ab6b2aae-418c-4b10-be71-f6460001cb57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System">
+      <UniqueIdentifier>{afebe62c-1d89-4738-ae66-cecb3feb6dd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Pilot">
+      <UniqueIdentifier>{3a232dad-c3e8-44b6-a9c5-0bd764b21fc9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="camera\MainCamera.cpp">
@@ -39,6 +54,15 @@
     <ClCompile Include="system\SystemLinux.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ImageProcessing\Software.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="World\AStarMapNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera\MainCamera.h">
@@ -47,32 +71,50 @@
     <ClInclude Include="command\CommandQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="command\Types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common\Timing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common\Types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="communication\Communication.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="pilot\AutoPilot.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="pilot\RemotePilot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sensor1d\Sensor1D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="system\System.h">
+    <ClInclude Include="ImageProcessing\Software.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AStar\stlastar.h">
+      <Filter>Header Files\AStar</Filter>
+    </ClInclude>
+    <ClInclude Include="AStar\fsa.h">
+      <Filter>Header Files\AStar</Filter>
+    </ClInclude>
+    <ClInclude Include="World\AStarMapNode.h">
+      <Filter>Header Files\World</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Map.h">
+      <Filter>Header Files\World</Filter>
+    </ClInclude>
+    <ClInclude Include="common\Timing.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\CapturedImage.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="system\System.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
     <ClInclude Include="system\SystemLinux.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="World\MapTypes.h">
+      <Filter>Header Files\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Types.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="pilot\RemotePilot.h">
+      <Filter>Header Files\Pilot</Filter>
+    </ClInclude>
+    <ClInclude Include="pilot\AutoPilot.h">
+      <Filter>Header Files\Pilot</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
