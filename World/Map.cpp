@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <cstring>
 
 void OpenALRF::Map20x20m::LoadFromFile()
 {
