@@ -7,8 +7,11 @@ OBJ_COMMAND = Command/CommandQueue.o
 OBJ_SENSOR1D = Sensor1D/Sensor1D.o
 OBJ_PILOT = Pilot/RemotePilot.o
 OBJ_CAMERA = Camera/MainCamera.o
+OBJ_IMAGEPROCESSING = ImageProcessing/Software.o
+OBJ_ASTARMAPNODE = World/AStarMapNode.o
+OBJ_WORLDMAP = World/Map.o
 
-OBJ = $(OBJ_COMMON) $(OBJ_SYSTEM) $(OBJ_COMM) $(OBJ_COMMAND) $(OBJ_SENSOR1D) $(OBJ_PILOT) $(OBJ_CAMERA)
+OBJ = $(OBJ_COMMON) $(OBJ_SYSTEM) $(OBJ_COMM) $(OBJ_COMMAND) $(OBJ_SENSOR1D) $(OBJ_PILOT) $(OBJ_CAMERA) $(OBJ_IMAGEPROCESSING) $(OBJ_ASTARMAPNODE) $(OBJ_WORLDMAP)
 LINKOBJ = $(OBJ)
 LIBS = 
 BIN  = libOpenALRF.a
@@ -50,3 +53,12 @@ Command/CommandQueue.o: Command/CommandQueue.cpp
 
 Camera/MainCamera.o: Camera/MainCamera.cpp
 	$(CXX) -c Camera/MainCamera.cpp -o Camera/MainCamera.o $(CXXFLAGS)
+
+ImageProcessing/Software.o: ImageProcessing/Software.cpp
+	$(CXX) -c ImageProcessing/Software.cpp -o ImageProcessing/Software.o $(CXXFLAGS)
+
+World/AStarMapNode.o: World/AStarMapNode.cpp
+	$(CXX) -c World/AStarMapNode.cpp -o World/AStarMapNode.o $(CXXFLAGS)
+
+World/Map.o: World/Map.cpp
+	$(CXX) -c World/Map.cpp -o World/Map.o $(CXXFLAGS)
