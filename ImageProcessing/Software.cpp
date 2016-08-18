@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <cstring>
 
 #ifndef min
 #define min(X, Y) (((X) < (Y)) ? (X) : (Y))
@@ -30,7 +31,7 @@ void OpenALRF::ImageProcessingSoftware::Initialize(const CapturedImage AImage)
 {
    Original = AImage;
 
-   WriteToBMP("original.bmp", AImage);
+   //WriteToBMP("original.bmp", AImage);
 }
 
 bool OpenALRF::ImageProcessingSoftware::AllocateBuffer(CapturedImage * AImage)
