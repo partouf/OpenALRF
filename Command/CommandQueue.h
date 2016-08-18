@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Types.h"
+#include "../Common/Types.h"
 #include "../System/Module.h"
 
 namespace OpenALRF
