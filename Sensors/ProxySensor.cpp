@@ -1,4 +1,5 @@
 #include "ProxySensor.h"
+#include <string>
 
 OpenALRF::ProxySensor::ProxySensor(const string AIdentifier, const sensorid_t ASensorIDFilter) : ISensor(AIdentifier), ISensor3DBusListener(ASensorIDFilter)
 {

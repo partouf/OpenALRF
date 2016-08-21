@@ -153,7 +153,7 @@
       <Filter>Header Files\Communication</Filter>
     </ClInclude>
     <ClInclude Include="Sensors\ProxySensor.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Sensors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
