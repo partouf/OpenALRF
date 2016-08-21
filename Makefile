@@ -4,14 +4,15 @@ OBJ_COMMON = Common/Timing.o
 OBJ_SYSTEM = System/System.o System/SystemLinux.o
 OBJ_COMM = Communication/Communication.o
 OBJ_COMMAND = Command/CommandQueue.o
-OBJ_SENSOR1D = Sensor1D/Sensor1D.o
+OBJ_SENSORS = Sensors/Sensors.o Sensors/ProxySensor.o
+OBJ_SENSORBUS = Communication/SensorBus.o Communication/SensorBusListener.o
 OBJ_PILOT = Pilot/RemotePilot.o
 OBJ_CAMERA = Camera/MainCamera.o
 OBJ_IMAGEPROCESSING = ImageProcessing/Software.o
 OBJ_ASTARMAPNODE = World/AStarMapNode.o
 OBJ_WORLDMAP = World/Map.o
 
-OBJ = $(OBJ_COMMON) $(OBJ_SYSTEM) $(OBJ_COMM) $(OBJ_COMMAND) $(OBJ_SENSOR1D) $(OBJ_PILOT) $(OBJ_CAMERA) $(OBJ_IMAGEPROCESSING) $(OBJ_ASTARMAPNODE) $(OBJ_WORLDMAP)
+OBJ = $(OBJ_COMMON) $(OBJ_SYSTEM) $(OBJ_COMM) $(OBJ_COMMAND) $(OBJ_SENSORS) $(OBJ_SENSORBUS) $(OBJ_PILOT) $(OBJ_CAMERA) $(OBJ_IMAGEPROCESSING) $(OBJ_ASTARMAPNODE) $(OBJ_WORLDMAP)
 LINKOBJ = $(OBJ)
 LIBS = 
 BIN  = libOpenALRF.a
@@ -36,14 +37,23 @@ System/System.o: System/System.cpp
 System/SystemLinux.o: System/SystemLinux.cpp
 	$(CXX) -c System/SystemLinux.cpp -o System/SystemLinux.o $(CXXFLAGS)
 
-Sensor1D/Sensor1D.o: Sensor1D/Sensor1D.cpp
-	$(CXX) -c Sensor1D/Sensor1D.cpp -o Sensor1D/Sensor1D.o $(CXXFLAGS)
+Sensors/Sensors.o: Sensors/Sensors.cpp
+	$(CXX) -c Sensors/Sensors.cpp -o Sensors/Sensors.o $(CXXFLAGS)
 
 Pilot/RemotePilot.o: Pilot/RemotePilot.cpp
 	$(CXX) -c Pilot/RemotePilot.cpp -o Pilot/RemotePilot.o $(CXXFLAGS)
 
 Communication/Communication.o: Communication/Communication.cpp
 	$(CXX) -c Communication/Communication.cpp -o Communication/Communication.o $(CXXFLAGS)
+
+Communication/SensorBus.o: Communication/SensorBus.cpp
+	$(CXX) -c Communication/SensorBus.cpp -o Communication/SensorBus.o $(CXXFLAGS)
+
+Communication/SensorBusListener.o: Communication/SensorBusListener.cpp
+	$(CXX) -c Communication/SensorBusListener.cpp -o Communication/SensorBusListener.o $(CXXFLAGS)
+
+Sensors/ProxySensor.o: Sensors/ProxySensor.cpp
+	$(CXX) -c Sensors/ProxySensor.cpp -o Sensors/ProxySensor.o $(CXXFLAGS)
 
 Common/Timing.o: Common/Timing.cpp
 	$(CXX) -c Common/Timing.cpp -o Common/Timing.o $(CXXFLAGS)

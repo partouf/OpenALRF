@@ -28,6 +28,21 @@
     <Filter Include="Header Files\Pilot">
       <UniqueIdentifier>{3a232dad-c3e8-44b6-a9c5-0bd764b21fc9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Communication">
+      <UniqueIdentifier>{356589ee-e286-4618-8412-9c36a1d0691f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Command">
+      <UniqueIdentifier>{15e86d0f-ace3-41f1-8cd6-6923c1d0ef64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ImageProcessing">
+      <UniqueIdentifier>{f4cdc567-afec-4c73-941b-92679830f580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Camera">
+      <UniqueIdentifier>{96571b0e-3a81-4e1e-a8de-20ab30e97882}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sensors">
+      <UniqueIdentifier>{a5139fa0-6947-4c7a-99c0-fcfb331b7f18}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="camera\MainCamera.cpp">
@@ -45,9 +60,6 @@
     <ClCompile Include="pilot\RemotePilot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sensor1d\Sensor1D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="system\System.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -63,23 +75,20 @@
     <ClCompile Include="World\Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Communication\SensorBus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensors\Sensors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Communication\SensorBusListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensors\ProxySensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="camera\MainCamera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="command\CommandQueue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="communication\Communication.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="sensor1d\Sensor1D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ImageProcessing\Software.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AStar\stlastar.h">
       <Filter>Header Files\AStar</Filter>
     </ClInclude>
@@ -115,6 +124,36 @@
     </ClInclude>
     <ClInclude Include="pilot\AutoPilot.h">
       <Filter>Header Files\Pilot</Filter>
+    </ClInclude>
+    <ClInclude Include="communication\Communication.h">
+      <Filter>Header Files\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="command\CommandQueue.h">
+      <Filter>Header Files\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageProcessing\Software.h">
+      <Filter>Header Files\ImageProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="camera\MainCamera.h">
+      <Filter>Header Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Communication\SensorBus.h">
+      <Filter>Header Files\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\Sensors.h">
+      <Filter>Header Files\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="Communication\SensorBusTypes.h">
+      <Filter>Header Files\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\SensorTypes.h">
+      <Filter>Header Files\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="Communication\SensorBusListener.h">
+      <Filter>Header Files\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\ProxySensor.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
