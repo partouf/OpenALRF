@@ -26,7 +26,7 @@ std::string OpenALRF::SensorBus::GetStatusInfo()
    {
       sensorid_t filter = Listener->GetIDFilter();
       char filterstr[1024];
-      sprintf(filterstr, "%d\0", filter);
+      sprintf(filterstr, "%d", filter);
 
       listeners += "<listener filter='";
       listeners += filterstr;

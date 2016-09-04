@@ -1,10 +1,20 @@
 #pragma once
 
 #include <cstdint>
-#include "../Sensors/Sensors.h"
+#include "../Common/Types.h"
 
 namespace OpenALRF
 {
+   typedef int8_t sensorid_t;
+
+   struct Sensor3DData
+   {
+      timestamp_t Timestamp;
+      double Data1;
+      double Data2;
+      double Data3;
+   };
+
    struct OrientationPRY
    {
       double Pitch;
@@ -21,6 +31,8 @@ namespace OpenALRF
 
    enum sensor_t
    {
+      sensorUnknown = 0,
+
       sensorUltrasonic = 10,
 
       sensorWheelEncoder = 20,

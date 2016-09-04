@@ -10,21 +10,20 @@ namespace OpenALRF
    class ProxySensor : public ISensor, ISensor3DBusListener
    {
    protected:
-      Sensor3DData LatestValue;
+      Sensor3DData LatestSensorData;
 
    public:
-      ProxySensor(const string AIdentifier, const sensorid_t ASensorIDFilter);
+      ProxySensor(OpenALRF::sensorid_t AIdentifier);
 
-      // Inherited via ISensor
-      std::string GetStatusInfo() override;
+      virtual std::string GetStatusInfo() override;
 
-      void PowerOff() override;
+      virtual void PowerOff() override;
 
-      void PowerOn() override;
+      virtual void PowerOn() override;
 
-      bool IsPowered() override;
+      virtual bool IsPowered() override;
 
-      Sensor3DData NextValue() override;
+      virtual bool NextValue(OpenALRF::Sensor3DData &AValue) override;
 
 
       // Inherited via ISensor3DBusListener

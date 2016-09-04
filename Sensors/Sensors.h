@@ -2,32 +2,36 @@
 
 #include "../System/Module.h"
 #include "../Common/Types.h"
-
-using namespace std;
+#include "SensorTypes.h"
 
 namespace OpenALRF
 {
-   struct Sensor3DData
-   {
-      timestamp_t Timestamp;
-      double Data1;
-      double Data2;
-      double Data3;
-   };
-
    class ISensor : public IModule
    {
    protected:
-      string Identifier;
-   public:
-      ISensor(const string AIdentifier);
+      sensorid_t Identifier;
+      sensorunit_t UsedUnit;
+      sensor_t Type;
 
-      virtual string GetIdentifier();
+      Sensor3DData LatestSensorData;
+      
+   public:
+      ISensor(sensorid_t AIdentifier);
+
+      virtual sensorid_t GetIdentifier();
+
+      virtual sensorunit_t GetUsedUnit();
+      virtual sensor_t GetSensorType();
 
       virtual void PowerOff() = 0;
       virtual void PowerOn() = 0;
       virtual bool IsPowered() = 0;
 
-      virtual Sensor3DData NextValue() = 0;
+      virtual bool NextValue(OpenALRF::Sensor3DData &AValue) = 0;
+
+      // Inherited via IModule
+      virtual std::string GetStatusInfo() override;
    };
+
+   std::string Sensor3DDataAsXML(const OpenALRF::Sensor3DData AValue);
 };

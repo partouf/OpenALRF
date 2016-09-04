@@ -8,8 +8,6 @@ namespace OpenALRF
 {
    #define ALLSENSORS 0
 
-   typedef int8_t sensorid_t;
-
    struct SensorConfig
    {
       sensorid_t ID;

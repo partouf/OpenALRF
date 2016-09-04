@@ -1,14 +1,15 @@
 #include "ProxySensor.h"
 #include <cstring>
 
-OpenALRF::ProxySensor::ProxySensor(const string AIdentifier, const sensorid_t ASensorIDFilter) : ISensor(AIdentifier), ISensor3DBusListener(ASensorIDFilter)
+OpenALRF::ProxySensor::ProxySensor(OpenALRF::sensorid_t AIdentifier) : ISensor(AIdentifier), ISensor3DBusListener(AIdentifier)
 {
-   memset(&LatestValue, 0, sizeof(Sensor3DData));
 }
 
 std::string OpenALRF::ProxySensor::GetStatusInfo()
 {
-   return "";
+   std::string info = ISensor::GetStatusInfo();
+
+   return info;
 }
 
 void OpenALRF::ProxySensor::PowerOff()
@@ -24,12 +25,22 @@ bool OpenALRF::ProxySensor::IsPowered()
    return true;
 }
 
-OpenALRF::Sensor3DData OpenALRF::ProxySensor::NextValue()
+bool OpenALRF::ProxySensor::NextValue(OpenALRF::Sensor3DData &AValue)
 {
-   return LatestValue;
+   if (LatestSensorData.Timestamp != 0)
+   {
+      AValue = LatestSensorData;
+
+      return true;
+   }
+
+   return false;
 }
 
 void OpenALRF::ProxySensor::NewSensorData(const SensorBusData3D ABusData)
 {
-   LatestValue = ABusData.Data;
+   Type = ABusData.Type;
+   UsedUnit = ABusData.UnitUsed;
+
+   LatestSensorData = ABusData.Data;
 }
