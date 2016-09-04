@@ -1,5 +1,6 @@
 #include "Sensors.h"
 #include "../Common/Timing.h"
+#include <cstring>
 
 OpenALRF::ISensor::ISensor(OpenALRF::sensorid_t AIdentifier) : IModule()
 {
