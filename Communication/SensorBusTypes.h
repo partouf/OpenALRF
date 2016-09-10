@@ -14,12 +14,6 @@ namespace OpenALRF
       std::string IPAddress;
    };
 
-   enum sensororigin_t
-   {
-      sensoriLocal = 0,
-      sensoriRemote = 1
-   };
-
    struct SensorBusData3D
    {
       sensororigin_t Origin;

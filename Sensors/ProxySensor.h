@@ -18,7 +18,7 @@ namespace OpenALRF
 
       virtual void PowerOn() override;
 
-      virtual bool IsPowered() override;
+      virtual bool IsPowered() const override;
 
       virtual bool NextValue(OpenALRF::Sensor3DData &AValue) override;
 

@@ -12,20 +12,22 @@ namespace OpenALRF
       sensorid_t Identifier;
       sensorunit_t UsedUnit;
       sensor_t Type;
+      sensororigin_t Origin;
 
       Sensor3DData LatestSensorData;
       
    public:
       ISensor(sensorid_t AIdentifier);
 
-      virtual sensorid_t GetIdentifier();
+      virtual sensorid_t GetIdentifier() const;
 
-      virtual sensorunit_t GetUsedUnit();
-      virtual sensor_t GetSensorType();
+      virtual sensorunit_t GetUsedUnit() const;
+      virtual sensor_t GetSensorType() const;
+      virtual sensororigin_t GetOrigin() const;
 
       virtual void PowerOff() = 0;
       virtual void PowerOn() = 0;
-      virtual bool IsPowered() = 0;
+      virtual bool IsPowered() const = 0;
 
       virtual bool NextValue(OpenALRF::Sensor3DData &AValue) = 0;
 

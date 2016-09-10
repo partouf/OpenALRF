@@ -7,6 +7,12 @@ namespace OpenALRF
 {
    typedef int8_t sensorid_t;
 
+   enum sensororigin_t
+   {
+      sensoriLocal = 0,
+      sensoriRemote = 1
+   };
+
    struct Sensor3DData
    {
       timestamp_t Timestamp;

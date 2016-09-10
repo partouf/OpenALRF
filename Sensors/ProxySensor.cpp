@@ -3,6 +3,7 @@
 
 OpenALRF::ProxySensor::ProxySensor(OpenALRF::sensorid_t AIdentifier) : ISensor(AIdentifier), ISensor3DBusListener(AIdentifier)
 {
+   Origin = sensoriRemote;
 }
 
 std::string OpenALRF::ProxySensor::GetStatusInfo()
@@ -20,7 +21,7 @@ void OpenALRF::ProxySensor::PowerOn()
 {
 }
 
-bool OpenALRF::ProxySensor::IsPowered()
+bool OpenALRF::ProxySensor::IsPowered() const
 {
    return true;
 }

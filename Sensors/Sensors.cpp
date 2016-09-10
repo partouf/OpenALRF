@@ -7,17 +7,23 @@ OpenALRF::ISensor::ISensor(OpenALRF::sensorid_t AIdentifier) : IModule()
    Identifier = AIdentifier;
    Type = sensorUnknown;
    UsedUnit = unitUnknown;
+   Origin = sensoriLocal;
    memset(&LatestSensorData, 0, sizeof(Sensor3DData));
 }
 
-OpenALRF::sensorunit_t OpenALRF::ISensor::GetUsedUnit()
+OpenALRF::sensorunit_t OpenALRF::ISensor::GetUsedUnit() const
 {
    return UsedUnit;
 }
 
-OpenALRF::sensor_t OpenALRF::ISensor::GetSensorType()
+OpenALRF::sensor_t OpenALRF::ISensor::GetSensorType() const
 {
    return Type;
+}
+
+OpenALRF::sensororigin_t OpenALRF::ISensor::GetOrigin() const
+{
+   return Origin;
 }
 
 std::string OpenALRF::ISensor::GetStatusInfo()
@@ -49,7 +55,7 @@ std::string OpenALRF::ISensor::GetStatusInfo()
    return info;
 }
 
-OpenALRF::sensorid_t OpenALRF::ISensor::GetIdentifier()
+OpenALRF::sensorid_t OpenALRF::ISensor::GetIdentifier() const
 {
    return Identifier;
 }
