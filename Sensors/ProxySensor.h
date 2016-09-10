@@ -9,9 +9,6 @@ namespace OpenALRF
 
    class ProxySensor : public ISensor, ISensor3DBusListener
    {
-   protected:
-      Sensor3DData LatestSensorData;
-
    public:
       ProxySensor(OpenALRF::sensorid_t AIdentifier);
 
