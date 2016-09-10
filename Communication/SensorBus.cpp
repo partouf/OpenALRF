@@ -7,6 +7,7 @@ void OpenALRF::SensorBus::Broadcast(const sensorid_t AID, const sensor_t ASensor
    Data.Type = ASensorType;
    Data.Data = ASensorData;
    Data.UnitUsed = AUnitUsed;
+   Data.Origin = OpenALRF::sensoriLocal;
 
    Broadcast(Data);
 }
