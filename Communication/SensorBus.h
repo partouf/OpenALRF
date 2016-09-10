@@ -22,6 +22,7 @@ namespace OpenALRF
       void ClearSubscribers();
 
       void Broadcast(const sensorid_t AID, const sensor_t ASensorType, const sensorunit_t AUnitUsed, const Sensor3DData ASensorData);
+      void Broadcast(const SensorBusData3D ABusSensorData);
 
       std::string GetStatusInfo() override;
    };

@@ -8,12 +8,20 @@ void OpenALRF::SensorBus::Broadcast(const sensorid_t AID, const sensor_t ASensor
    Data.Data = ASensorData;
    Data.UnitUsed = AUnitUsed;
 
+   Broadcast(Data);
+}
+
+void OpenALRF::SensorBus::Broadcast(const SensorBusData3D ABusSensorData)
+{
    for (auto Listener : SubscriberInstances)
    {
-      auto filter = Listener->GetIDFilter();
-      if ((filter == Data.ID) || (filter == ALLSENSORS))
+      if (Listener != nullptr)
       {
-         Listener->NewSensorData(Data);
+         auto filter = Listener->GetIDFilter();
+         if ((filter == ABusSensorData.ID) || (filter == ALLSENSORS))
+         {
+            Listener->NewSensorData(ABusSensorData);
+         }
       }
    }
 }
