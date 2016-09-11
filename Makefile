@@ -17,7 +17,7 @@ LINKOBJ = $(OBJ)
 LIBS = 
 BIN  = libOpenALRF.a
 CXXINCS = 
-CXXFLAGS = $(CXXINCS) -std=c++11 -fexceptions -O2
+CXXFLAGS = $(CXXINCS) -g -std=c++11 -fexceptions -O2
 RM = rm -f
 
 .PHONY: all all-before all-after clean clean-custom
