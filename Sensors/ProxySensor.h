@@ -7,7 +7,7 @@ namespace OpenALRF
 {
    // note: #panic we're inheriting from 2 classes, should rewrite
 
-   class ProxySensor : public ISensor, ISensor3DBusListener
+   class ProxySensor : public ISensor, public virtual ISensor3DBusListener
    {
    public:
       ProxySensor(OpenALRF::sensorid_t AIdentifier);
