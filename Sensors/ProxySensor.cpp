@@ -1,16 +1,9 @@
 #include "ProxySensor.h"
 #include <cstring>
 
-OpenALRF::ProxySensor::ProxySensor(OpenALRF::sensorid_t AIdentifier) : ISensor(AIdentifier), ISensor3DBusListener(AIdentifier)
+OpenALRF::ProxySensor::ProxySensor(OpenALRF::sensorid_t AIdentifier) : ISensor3DBusListener(AIdentifier)
 {
    Origin = sensoriRemote;
-}
-
-std::string OpenALRF::ProxySensor::GetStatusInfo()
-{
-   std::string info = ISensor::GetStatusInfo();
-
-   return info;
 }
 
 void OpenALRF::ProxySensor::PowerOff()

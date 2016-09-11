@@ -1,6 +1,8 @@
 #include "Sensors.h"
 #include "../Common/Timing.h"
 #include <cstring>
+#include <sstream>
+#include <locale>
 
 OpenALRF::ISensor::ISensor(OpenALRF::sensorid_t AIdentifier) : IModule()
 {
@@ -64,6 +66,9 @@ std::string OpenALRF::Sensor3DDataAsXML(const OpenALRF::Sensor3DData AValue)
 {
    std::string xml;
 
+   std::ostringstream ostr;
+   ostr.imbue(std::locale("C"));
+
    char data[1024] = "";
 
    auto timestampstr = GetTimestampAsString(AValue.Timestamp);
@@ -72,14 +77,16 @@ std::string OpenALRF::Sensor3DDataAsXML(const OpenALRF::Sensor3DData AValue)
    sprintf(data, "<Timestamp>%s</Timestamp>", timestampstr.c_str());
    xml += data;
 
-   sprintf(data, "<Data1>%f</Data1>", AValue.Data1);
-   xml += data;
+   float tmp;
 
-   sprintf(data, "<Data2>%f</Data2>", AValue.Data2);
-   xml += data;
+   tmp = AValue.Data1;
+   ostr << "<Data1>" << tmp << "</Data1>";
 
-   sprintf(data, "<Data3>%f</Data3>", AValue.Data3);
-   xml += data;
+   tmp = AValue.Data2;
+   ostr << "<Data2>" << tmp << "</Data2>";
 
-   return xml;
+   tmp = AValue.Data3;
+   ostr << "<Data3>" << tmp << "</Data3>";
+
+   return xml + ostr.str();
 }

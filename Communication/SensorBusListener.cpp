@@ -1,6 +1,6 @@
 #include "SensorBusListener.h"
 
-OpenALRF::ISensor3DBusListener::ISensor3DBusListener(sensorid_t ASensorIDFilter)
+OpenALRF::ISensor3DBusListener::ISensor3DBusListener(sensorid_t ASensorIDFilter) : ISensor::ISensor(ASensorIDFilter)
 {
    SensorIDFilter = ASensorIDFilter;
 }

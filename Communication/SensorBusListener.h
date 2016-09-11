@@ -1,10 +1,11 @@
 #pragma once
 
 #include "SensorBusTypes.h"
+#include "../Sensors/Sensors.h"
 
 namespace OpenALRF
 {
-   class ISensor3DBusListener
+   class ISensor3DBusListener: public ISensor
    {
    protected:
       sensorid_t SensorIDFilter;
