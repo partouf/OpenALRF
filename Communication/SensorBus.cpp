@@ -27,18 +27,16 @@ void OpenALRF::SensorBus::Broadcast(const SensorBusData3D ABusSensorData)
    }
 }
 
-std::string OpenALRF::SensorBus::GetStatusInfo()
+std::string OpenALRF::SensorBus::GetStatusInfo() const
 {
    std::string listeners;
 
    for (auto Listener : SubscriberInstances)
    {
       sensorid_t filter = Listener->GetIDFilter();
-      char filterstr[1024];
-      sprintf(filterstr, "%d", filter);
 
       listeners += "<listener filter='";
-      listeners += filterstr;
+      listeners += std::to_string(filter);
       listeners += "' />";
    }
 

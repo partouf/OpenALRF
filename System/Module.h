@@ -7,6 +7,6 @@ namespace OpenALRF
    class IModule
    {
    public:
-      virtual std::string GetStatusInfo() = 0;
+      virtual std::string GetStatusInfo() const = 0;
    };
 };

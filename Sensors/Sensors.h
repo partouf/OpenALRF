@@ -32,7 +32,7 @@ namespace OpenALRF
       virtual bool NextValue(OpenALRF::Sensor3DData &AValue) = 0;
 
       // Inherited via IModule
-      virtual std::string GetStatusInfo() override;
+      virtual std::string GetStatusInfo() const override;
    };
 
    std::string Sensor3DDataAsXML(const OpenALRF::Sensor3DData AValue);

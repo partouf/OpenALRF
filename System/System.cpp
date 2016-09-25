@@ -1,6 +1,6 @@
 #include "System.h"
 
-OpenALRF::status_t OpenALRF::ISystem::CurrentStatus()
+OpenALRF::status_t OpenALRF::ISystem::CurrentStatus() const
 {
    return SuggestedStatus;
 }

@@ -11,7 +11,7 @@ namespace OpenALRF
    protected:
       OpenALRF::status_t SuggestedStatus;
    public:
-      virtual OpenALRF::status_t CurrentStatus();
+      virtual OpenALRF::status_t CurrentStatus() const;
       virtual void ChangeStatus(OpenALRF::status_t ANewStatus);
 
       virtual void RebootNow() = 0;

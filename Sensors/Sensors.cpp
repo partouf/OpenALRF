@@ -28,7 +28,7 @@ OpenALRF::sensororigin_t OpenALRF::ISensor::GetOrigin() const
    return Origin;
 }
 
-std::string OpenALRF::ISensor::GetStatusInfo()
+std::string OpenALRF::ISensor::GetStatusInfo() const
 {
    std::string info;
 
