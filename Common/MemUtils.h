@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstring>
+
 namespace OpenALRF
 {
    template <class T>
