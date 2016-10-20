@@ -20,6 +20,8 @@ namespace OpenALRF
       double Data2;
       double Data3;
    };
+   std::ostream& operator<< (std::ostream& stream, const Sensor3DData& sensordata);
+   std::string& operator<< (std::string& stream, const Sensor3DData& sensordata);
 
    struct OrientationPRY
    {

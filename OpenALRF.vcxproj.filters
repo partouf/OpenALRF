@@ -87,6 +87,12 @@
     <ClCompile Include="Sensors\ProxySensor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Communication\SensorBusTypes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensors\SensorTypes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AStar\stlastar.h">
@@ -154,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="Sensors\ProxySensor.h">
       <Filter>Header Files\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\MemUtils.h">
+      <Filter>Header Files\Common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -97,6 +97,11 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="camera\MainCamera.cpp" />
     <ClCompile Include="command\CommandQueue.cpp" />
@@ -104,10 +109,12 @@
     <ClCompile Include="communication\Communication.cpp" />
     <ClCompile Include="Communication\SensorBus.cpp" />
     <ClCompile Include="Communication\SensorBusListener.cpp" />
+    <ClCompile Include="Communication\SensorBusTypes.cpp" />
     <ClCompile Include="ImageProcessing\Software.cpp" />
     <ClCompile Include="pilot\RemotePilot.cpp" />
     <ClCompile Include="Sensors\ProxySensor.cpp" />
     <ClCompile Include="Sensors\Sensors.cpp" />
+    <ClCompile Include="Sensors\SensorTypes.cpp" />
     <ClCompile Include="system\System.cpp" />
     <ClCompile Include="system\SystemLinux.cpp" />
     <ClCompile Include="World\AStarMapNode.cpp" />
@@ -119,6 +126,7 @@
     <ClInclude Include="camera\MainCamera.h" />
     <ClInclude Include="command\CommandQueue.h" />
     <ClInclude Include="Common\CapturedImage.h" />
+    <ClInclude Include="Common\MemUtils.h" />
     <ClInclude Include="common\Timing.h" />
     <ClInclude Include="Common\Types.h" />
     <ClInclude Include="communication\Communication.h" />

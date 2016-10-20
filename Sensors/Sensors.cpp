@@ -1,5 +1,6 @@
 #include "Sensors.h"
 #include "../Common/Timing.h"
+#include "../Common/MemUtils.h"
 #include <cstring>
 #include <sstream>
 #include <locale>
@@ -10,7 +11,8 @@ OpenALRF::ISensor::ISensor(OpenALRF::sensorid_t AIdentifier) : IModule()
    Type = sensorUnknown;
    UsedUnit = unitUnknown;
    Origin = sensoriLocal;
-   memset(&LatestSensorData, 0, sizeof(Sensor3DData));
+   
+   OpenALRF::NullifyMem(LatestSensorData);
 }
 
 OpenALRF::sensorunit_t OpenALRF::ISensor::GetUsedUnit() const
@@ -26,6 +28,11 @@ OpenALRF::sensor_t OpenALRF::ISensor::GetSensorType() const
 OpenALRF::sensororigin_t OpenALRF::ISensor::GetOrigin() const
 {
    return Origin;
+}
+
+OpenALRF::Sensor3DData OpenALRF::ISensor::LatestValue() const
+{
+   return LatestSensorData;
 }
 
 std::string OpenALRF::ISensor::GetStatusInfo() const

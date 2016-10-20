@@ -22,4 +22,6 @@ namespace OpenALRF
       sensorunit_t UnitUsed;
       Sensor3DData Data;
    };
+   std::ostream& operator<< (std::ostream& stream, const SensorBusData3D& busdata);
+   std::string& operator<< (std::string& stream, const SensorBusData3D& busdata);
 };
