@@ -3,6 +3,6 @@ os:
 language: cpp
 compiler: clang
 script:
-  - find . -name '*.h' -or -name '*.cpp' | xargs clang-format -i -style=file
+  - find . -name '*.h' -or -name '*.cpp' | xargs clang-format -i
   - git status
   - make
