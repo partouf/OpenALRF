@@ -1,11 +1,11 @@
 #pragma once
 
+#include "../Sensors/SensorTypes.h"
+#include "../System/Module.h"
+#include "SensorBusListener.h"
+#include "SensorBusTypes.h"
 #include <string>
 #include <vector>
-#include "../System/Module.h"
-#include "../Sensors/SensorTypes.h"
-#include "SensorBusTypes.h"
-#include "SensorBusListener.h"
 
 using namespace std;
 
@@ -15,6 +15,7 @@ namespace OpenALRF
    {
    protected:
       vector<ISensor3DBusListener *> SubscriberInstances;
+
    public:
       SensorBus();
 
