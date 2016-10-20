@@ -2,4 +2,7 @@ os:
   - linux
 language: cpp
 compiler: clang
-script: make
+script:
+  - clang-format -i *.cpp *.h
+  - git status
+  - make
