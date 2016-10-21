@@ -29,10 +29,17 @@ namespace OpenALRF
    {
       module_t Module;
       action_t Action;
+      timestamp_t ExecutionTime;
       int16_t param1;
       int16_t param2;
       std::string param3;
+
+      static Command Empty();
    };
+   bool operator ==(const Command &a, const Command &b);
+   bool operator !=(const Command &a, const Command &b);
+   std::ostream& operator<< (std::ostream& stream, const Command& command);
+   std::string& operator<< (std::string& stream, const Command& command);
 
    struct OrderedCommand
    {
@@ -40,4 +47,8 @@ namespace OpenALRF
       order_t Type;
       Command Cmd;
    };
+   bool operator ==(const OrderedCommand &a, const OrderedCommand &b);
+   bool operator !=(const OrderedCommand &a, const OrderedCommand &b);
+   std::ostream& operator<< (std::ostream& stream, const OrderedCommand& command);
+   std::string& operator<< (std::string& stream, const OrderedCommand& command);
 };

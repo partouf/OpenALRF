@@ -93,6 +93,9 @@
     <ClCompile Include="Sensors\SensorTypes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Common\Types.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AStar\stlastar.h">
@@ -164,5 +167,8 @@
     <ClInclude Include="Common\MemUtils.h">
       <Filter>Header Files\Common</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".clang-format" />
   </ItemGroup>
 </Project>
