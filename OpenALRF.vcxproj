@@ -114,6 +114,8 @@
     <ClCompile Include="ImageProcessing\Software.cpp" />
     <ClCompile Include="pilot\RemotePilot.cpp" />
     <ClCompile Include="Sensors\ProxySensor.cpp" />
+    <ClCompile Include="Sensors\ProxySensorWithHistory.cpp" />
+    <ClCompile Include="Sensors\SensorDictionary.cpp" />
     <ClCompile Include="Sensors\Sensors.cpp" />
     <ClCompile Include="Sensors\SensorTypes.cpp" />
     <ClCompile Include="system\System.cpp" />
@@ -138,6 +140,8 @@
     <ClInclude Include="pilot\AutoPilot.h" />
     <ClInclude Include="pilot\RemotePilot.h" />
     <ClInclude Include="Sensors\ProxySensor.h" />
+    <ClInclude Include="Sensors\ProxySensorWithHistory.h" />
+    <ClInclude Include="Sensors\SensorDictionary.h" />
     <ClInclude Include="Sensors\Sensors.h" />
     <ClInclude Include="Sensors\SensorTypes.h" />
     <ClInclude Include="system\System.h" />
