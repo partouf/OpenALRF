@@ -69,6 +69,10 @@ namespace OpenALRF
       unitMetersPerSecond = 50,
       unitG = 55,
 
-      unitMicroTesla = 60
+      unitMicroTesla = 60,
+
+      unitPascal = 70,
+
+      unitTicks = 80
    };
 };
