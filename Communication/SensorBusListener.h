@@ -10,10 +10,10 @@ namespace OpenALRF
    protected:
       sensorid_t SensorIDFilter;
    public:
-      ISensor3DBusListener(const sensorid_t ASensorIDFilter);
+      ISensor3DBusListener(const OpenALRF::sensorid_t ASensorIDFilter);
 
-      sensorid_t GetIDFilter() const;
+      OpenALRF::sensorid_t GetIDFilter() const;
 
-      virtual void NewSensorData(const SensorBusData3D ABusData) = 0;
+      virtual void NewSensorData(const OpenALRF::SensorBusData3D ABusData) = 0;
    };
 };
