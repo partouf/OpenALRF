@@ -1,4 +1,5 @@
 #include "SensorBus.h"
+#include <algorithm>
 
 void OpenALRF::SensorBus::Broadcast(const sensorid_t AID, const sensor_t ASensorType, const sensorunit_t AUnitUsed, const Sensor3DData ASensorData)
 {
@@ -50,6 +51,15 @@ OpenALRF::SensorBus::SensorBus() : IModule()
 void OpenALRF::SensorBus::Subscribe(ISensor3DBusListener *AListener)
 {
    SubscriberInstances.push_back(AListener);
+}
+
+void OpenALRF::SensorBus::Unsubscribe(ISensor3DBusListener *AListener)
+{
+   auto Found = std::find(SubscriberInstances.begin(), SubscriberInstances.end(), AListener);
+   if (Found != SubscriberInstances.end())
+   {
+      SubscriberInstances.erase(Found);
+   }
 }
 
 void OpenALRF::SensorBus::ClearSubscribers()

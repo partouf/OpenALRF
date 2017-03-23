@@ -20,6 +20,7 @@ namespace OpenALRF
       SensorBus();
 
       void Subscribe(ISensor3DBusListener *AListener);
+      void Unsubscribe(ISensor3DBusListener * AListener);
       void ClearSubscribers();
 
       void Broadcast(const sensorid_t AID, const sensor_t ASensorType, const sensorunit_t AUnitUsed, const Sensor3DData ASensorData);
