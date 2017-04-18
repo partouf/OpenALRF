@@ -7,7 +7,7 @@
 
 namespace OpenALRF
 {
-   class Map20x20m: public IMap
+   class Map20x20m: public IMapReaderWriter
    {
    protected:
       std::string Filename;
@@ -16,23 +16,34 @@ namespace OpenALRF
       Position Start;
       unsigned char MeterMap[20][20];
 
+      inline bool IsOutOfBounds(int X, int Y) const;
+
       void LoadFromFile();
       //void Clear();
    public:
       Map20x20m(std::string AFilename);
 
-      virtual float GetMapValue(int X, int Y) const override;
+      void ClearMap();
 
-      void SetMapValue(int X, int Y, unsigned char AValue);
+      virtual double GetMapValue(int X, int Y) const override;
+
+      virtual void SetMapValue(int X, int Y, double AValue) override;
 
       void SaveToFile(const std::string ANewFilename = "");
    };
 
-   class IMapping
+   class Map8x8m : public IMapReaderWriter
    {
    protected:
-      //Map20x20m LoadFromFile(Position AMapPosition);
+      unsigned char MeterMap[8][8];
+
+      inline bool IsOutOfBounds(int X, int Y) const;
+      void ClearMap();
    public:
-      //void SetupPerspective(Position APerspective);
+      Map8x8m();
+
+      virtual double GetMapValue(int X, int Y) const override;
+
+      virtual void SetMapValue(int X, int Y, double AValue) override;
    };
 };

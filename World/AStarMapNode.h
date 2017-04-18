@@ -26,5 +26,5 @@ namespace OpenALRF
       int GetY() const;
    };
 
-   void SetCurrentSearchMap(IMap *AMap);
+   void SetCurrentSearchMap(IMapReader *AMap);
 };

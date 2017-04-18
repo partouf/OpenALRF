@@ -122,6 +122,8 @@
     <ClCompile Include="system\SystemLinux.cpp" />
     <ClCompile Include="World\AStarMapNode.cpp" />
     <ClCompile Include="World\Map.cpp" />
+    <ClCompile Include="World\MapTypes.cpp" />
+    <ClCompile Include="World\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AStar\fsa.h" />
@@ -149,6 +151,7 @@
     <ClInclude Include="World\AStarMapNode.h" />
     <ClInclude Include="World\Map.h" />
     <ClInclude Include="World\MapTypes.h" />
+    <ClInclude Include="World\Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
