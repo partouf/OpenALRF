@@ -25,6 +25,9 @@ namespace OpenALRF
 
    class EMapCoordsOutOfBounds : public std::runtime_error
    {
+   private:
+      int X;
+      int Y;
    public:
       EMapCoordsOutOfBounds(int X, int Y);
    };
