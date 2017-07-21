@@ -1,6 +1,6 @@
 #include "AStarMapNode.h"
 
-OpenALRF::IMapReader *CurrentSearchMap = nullptr;
+const OpenALRF::IMapReader *CurrentSearchMap = nullptr;
 
 OpenALRF::MapSearchNode::MapSearchNode()
 {
@@ -103,7 +103,7 @@ int OpenALRF::MapSearchNode::GetY() const
    return this->y;
 }
 
-void OpenALRF::SetCurrentSearchMap(IMapReader *AMap)
+void OpenALRF::SetCurrentSearchMap(const IMapReader *AMap)
 {
    CurrentSearchMap = AMap;
 }

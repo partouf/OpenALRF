@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include "../Common/MemUtils.h"
 
 inline bool OpenALRF::Map20x20m::IsOutOfBounds(int X, int Y) const
 {
@@ -65,7 +66,7 @@ OpenALRF::Map20x20m::Map20x20m(std::string AFilename) : IMapReaderWriter()
 
 void OpenALRF::Map20x20m::ClearMap()
 {
-   memset(&MeterMap, 0, 400);
+   NullifyMem(MeterMap);
 }
 
 double OpenALRF::Map20x20m::GetMapValue(int X, int Y) const
@@ -95,7 +96,7 @@ inline bool OpenALRF::Map8x8m::IsOutOfBounds(int X, int Y) const
 
 void OpenALRF::Map8x8m::ClearMap()
 {
-   memset(&MeterMap, 0, 64);
+   NullifyMem(MeterMap);
 }
 
 OpenALRF::Map8x8m::Map8x8m(): IMapReaderWriter()

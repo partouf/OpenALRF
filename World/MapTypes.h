@@ -23,6 +23,9 @@ namespace OpenALRF
       int Y;
    };
 
+   typedef int32_t distance_t;
+   typedef int8_t degrees_t;
+
    class EMapCoordsOutOfBounds : public std::runtime_error
    {
    private:
@@ -56,5 +59,11 @@ namespace OpenALRF
    {
    public:
       virtual IMapReaderWriter *Clip8x8(int CenterX, int CenterY) const = 0;
+   };
+
+   class IMapProvider
+   {
+   public:
+      virtual IMapReader *GetCurrentMap() = 0;
    };
 };

@@ -19,7 +19,6 @@ namespace OpenALRF
       inline bool IsOutOfBounds(int X, int Y) const;
 
       void LoadFromFile();
-      //void Clear();
    public:
       Map20x20m(std::string AFilename);
 
