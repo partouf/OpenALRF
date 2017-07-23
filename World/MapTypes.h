@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdexcept>
+
 namespace OpenALRF
 {
    enum Legenda {
@@ -21,9 +23,47 @@ namespace OpenALRF
       int Y;
    };
 
-   class IMap
+   typedef int32_t distance_t;
+   typedef int8_t degrees_t;
+
+   class EMapCoordsOutOfBounds : public std::runtime_error
+   {
+   private:
+      int X;
+      int Y;
+   public:
+      EMapCoordsOutOfBounds(int X, int Y);
+   };
+
+   class IMapReader
    {
    public:
-      virtual float GetMapValue(int X, int Y) const = 0;
+      virtual double GetMapValue(int X, int Y) const = 0;
+   };
+
+   class IMapWriter
+   {
+   public:
+      virtual void SetMapValue(int X, int Y, double AValue) = 0;
+   };
+
+   class IMapReaderWriter : public IMapReader, public IMapWriter
+   {
+   public:
+      IMapReaderWriter() : IMapReader(), IMapWriter()
+      {
+      }
+   };
+
+   class IMapTransform
+   {
+   public:
+      virtual IMapReaderWriter *Clip8x8(int CenterX, int CenterY) const = 0;
+   };
+
+   class IMapProvider
+   {
+   public:
+      virtual IMapReader *GetCurrentMap() = 0;
    };
 };

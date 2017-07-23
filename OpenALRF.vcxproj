@@ -112,6 +112,7 @@
     <ClCompile Include="Communication\SensorBusListener.cpp" />
     <ClCompile Include="Communication\SensorBusTypes.cpp" />
     <ClCompile Include="ImageProcessing\Software.cpp" />
+    <ClCompile Include="Pilot\AutoPilotDefault.cpp" />
     <ClCompile Include="pilot\RemotePilot.cpp" />
     <ClCompile Include="Sensors\ProxySensor.cpp" />
     <ClCompile Include="Sensors\ProxySensorWithHistory.cpp" />
@@ -122,6 +123,10 @@
     <ClCompile Include="system\SystemLinux.cpp" />
     <ClCompile Include="World\AStarMapNode.cpp" />
     <ClCompile Include="World\Map.cpp" />
+    <ClCompile Include="World\MapRoute.cpp" />
+    <ClCompile Include="World\MapTypes.cpp" />
+    <ClCompile Include="World\MapUtils.cpp" />
+    <ClCompile Include="World\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AStar\fsa.h" />
@@ -138,6 +143,7 @@
     <ClInclude Include="Communication\SensorBusTypes.h" />
     <ClInclude Include="ImageProcessing\Software.h" />
     <ClInclude Include="pilot\AutoPilot.h" />
+    <ClInclude Include="Pilot\AutoPilotDefault.h" />
     <ClInclude Include="pilot\RemotePilot.h" />
     <ClInclude Include="Sensors\ProxySensor.h" />
     <ClInclude Include="Sensors\ProxySensorWithHistory.h" />
@@ -148,7 +154,10 @@
     <ClInclude Include="system\SystemLinux.h" />
     <ClInclude Include="World\AStarMapNode.h" />
     <ClInclude Include="World\Map.h" />
+    <ClInclude Include="World\MapRoute.h" />
     <ClInclude Include="World\MapTypes.h" />
+    <ClInclude Include="World\MapUtils.h" />
+    <ClInclude Include="World\Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
