@@ -96,38 +96,6 @@ std::string & OpenALRF::operator<<(std::string & stream, const OrderedCommand & 
    return stream;
 }
 
-
-
-/*
-uint32_t cmdlen = (msg[0] << 24) | (msg[1] << 16) | (msg[2] << 8) | msg[3];
-
-if (cmdlen >= 8)
-{
-   BinCmd.Cmd.Module = static_cast<OpenALRF::module_t>(msg[4] << 8 | msg[5]);
-   BinCmd.Cmd.Action = static_cast<OpenALRF::action_t>(msg[6] << 8 | msg[7]);
-
-   if (cmdlen >= 10)
-   {
-      BinCmd.Cmd.param1 = static_cast<int16_t>(msg[8] << 8 | msg[9]);
-      if (cmdlen >= 12)
-      {
-         BinCmd.Cmd.param2 = static_cast<int16_t>(msg[10] << 8 | msg[11]);
-
-         BinCmd.Cmd.param3 = "";
-         if (cmdlen > 12)
-         {
-            Groundfloor::String StrParam(sMessage->getPointer(12), cmdlen - 12);
-            BinCmd.Cmd.param3.append(StrParam.getValue(), StrParam.getLength());
-         }
-      }
-   }
-
-   skipcount += cmdlen;
-
-   AData->remove(0, skipcount - 1);
-}
-*/
-
 OpenALRF::Command OpenALRF::Command::Empty()
 {
    return Command{modVoid, actVoid, 0, 0, 0, ""};
