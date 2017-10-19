@@ -36,11 +36,11 @@ std::string & OpenALRF::operator<<(std::string & stream, const Command & command
    buffer[2] = (cmdlen >> 8) & 0xff;
    buffer[3] = cmdlen & 0xff;
 
-   buffer[4] = (command.Module >> 8) & 0xff;
-   buffer[5] = command.Module & 0xff;
+   buffer[4] = (static_cast<int>(command.Module) >> 8) & 0xff;
+   buffer[5] = static_cast<int>(command.Module) & 0xff;
 
-   buffer[6] = (command.Action >> 8) & 0xff;
-   buffer[7] = command.Action & 0xff;
+   buffer[6] = (static_cast<int>(command.Action) >> 8) & 0xff;
+   buffer[7] = static_cast<int>(command.Action) & 0xff;
 
    buffer[8] = (command.param1 >> 8) & 0xff;
    buffer[9] = command.param1 & 0xff;
@@ -103,8 +103,8 @@ uint32_t cmdlen = (msg[0] << 24) | (msg[1] << 16) | (msg[2] << 8) | msg[3];
 
 if (cmdlen >= 8)
 {
-   BinCmd.Cmd.Module = static_cast<OpenALRF::module_t>(msg[4] << 8 | msg[5]);
-   BinCmd.Cmd.Action = static_cast<OpenALRF::action_t>(msg[6] << 8 | msg[7]);
+   BinCmd.Cmd.Module = static_cast<OpenALRF::Module>(msg[4] << 8 | msg[5]);
+   BinCmd.Cmd.Action = static_cast<OpenALRF::Action>(msg[6] << 8 | msg[7]);
 
    if (cmdlen >= 10)
    {
@@ -130,5 +130,5 @@ if (cmdlen >= 8)
 
 OpenALRF::Command OpenALRF::Command::Empty()
 {
-   return Command{modVoid, actVoid, 0, 0, 0, ""};
+   return Command{OpenALRF::Module::Void, OpenALRF::Action::Void, 0, 0, 0, ""};
 }

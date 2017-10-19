@@ -7,28 +7,28 @@ namespace OpenALRF
 {
    typedef int64_t timestamp_t;
 
-   enum status_t { statStopped = 0, statRunning = 1, statWaiting = 2 };
+   enum class Status { Stopped = 0, Running = 1, Waiting = 2 };
 
-   enum module_t { modVoid = 0, modRemotePilot = 1, modAutoPilot = 2, modCamera = 3, modFancy = 5, modSystem = 9 };
+   enum class Module { Void = 0, RemotePilot = 1, AutoPilot = 2, Camera = 3, Fancy = 5, System = 9 };
    
-   enum action_t {
-      actVoid = 0,
-      actRemotePilotForward = 11, actRemotePilotBackward = 12, actRemotePilotLeft = 13, actRemotePilotRight = 14, actRemotePilotStop = 15,
-      actCameraCapture = 31,
-      actFancyBlink1 = 51, actFancyBlink2 = 51,
-      actSystemReboot = 91, actSystemRestartNetIF = 92, actSystemInfoReport = 93, actSystemResume = 94, actSystemWait = 95, actSystemStop = 96
+   enum class Action {
+      Void = 0,
+      RemotePilotForward = 11, RemotePilotBackward = 12, RemotePilotLeft = 13, RemotePilotRight = 14, RemotePilotStop = 15,
+      CameraCapture = 31,
+      FancyBlink1 = 51, FancyBlink2 = 51,
+      SystemReboot = 91, SystemRestartNetIF = 92, SystemInfoReport = 93, SystemResume = 94, SystemWait = 95, SystemStop = 96
    };
 
-   enum order_t {
-      ordAny = 0,
-      ordStart = 1,
-      ordStop = 2
+   enum class Order {
+      Any = 0,
+      Start = 1,
+      Stop = 2
    };
 
    struct Command
    {
-      module_t Module;
-      action_t Action;
+      Module Module;
+      Action Action;
       timestamp_t ExecutionTime;
       int16_t param1;
       int16_t param2;
@@ -44,7 +44,7 @@ namespace OpenALRF
    struct OrderedCommand
    {
       int16_t Order;
-      order_t Type;
+      OpenALRF::Order Type;
       Command Cmd;
    };
    bool operator ==(const OrderedCommand &a, const OrderedCommand &b);
