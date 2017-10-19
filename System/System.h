@@ -9,10 +9,10 @@ namespace OpenALRF
    class ISystem : public IModule
    {
    protected:
-      OpenALRF::status_t SuggestedStatus;
+      OpenALRF::Status SuggestedStatus;
    public:
-      virtual OpenALRF::status_t CurrentStatus() const;
-      virtual void ChangeStatus(OpenALRF::status_t ANewStatus);
+      virtual OpenALRF::Status CurrentStatus() const;
+      virtual void ChangeStatus(OpenALRF::Status ANewStatus);
 
       virtual void RebootNow() = 0;
 

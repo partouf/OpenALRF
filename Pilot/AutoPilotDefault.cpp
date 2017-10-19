@@ -17,12 +17,12 @@ OpenALRF::degrees_t OpenALRF::AutoPilotDefault::MakeCommandsFromMapSearchDiffere
    else if (angle == 180)
    {
       // best to just go backwards instead of turning
-      CommandQueue->Add({ OpenALRF::modRemotePilot, OpenALRF::actRemotePilotBackward, distance });
+      CommandQueue->Add({ OpenALRF::Module::RemotePilot, OpenALRF::Action::RemotePilotBackward, distance });
       NewAngle = 0;
    }
    else if (angle == 0)
    {
-      CommandQueue->Add({ OpenALRF::modRemotePilot, OpenALRF::actRemotePilotForward, distance });
+      CommandQueue->Add({ OpenALRF::Module::RemotePilot, OpenALRF::Action::RemotePilotForward, distance });
       NewAngle = 0;
    }
    else
@@ -31,14 +31,14 @@ OpenALRF::degrees_t OpenALRF::AutoPilotDefault::MakeCommandsFromMapSearchDiffere
 
       if (NewAngle > 180)
       {
-         CommandQueue->Add({ OpenALRF::modRemotePilot, OpenALRF::actRemotePilotLeft, static_cast<int16_t>(180 - NewAngle) });
+         CommandQueue->Add({ OpenALRF::Module::RemotePilot, OpenALRF::Action::RemotePilotLeft, static_cast<int16_t>(180 - NewAngle) });
       }
       else if (NewAngle > 0)
       {
-         CommandQueue->Add({ OpenALRF::modRemotePilot, OpenALRF::actRemotePilotRight, NewAngle });
+         CommandQueue->Add({ OpenALRF::Module::RemotePilot, OpenALRF::Action::RemotePilotRight, NewAngle });
       }
 
-      CommandQueue->Add({ OpenALRF::modRemotePilot, OpenALRF::actRemotePilotForward, distance });
+      CommandQueue->Add({ OpenALRF::Module::RemotePilot, OpenALRF::Action::RemotePilotForward, distance });
    }
 
    return NewAngle;

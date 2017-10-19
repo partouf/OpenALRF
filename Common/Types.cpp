@@ -36,11 +36,11 @@ std::string & OpenALRF::operator<<(std::string & stream, const Command & command
    buffer[2] = (cmdlen >> 8) & 0xff;
    buffer[3] = cmdlen & 0xff;
 
-   buffer[4] = (command.Module >> 8) & 0xff;
-   buffer[5] = command.Module & 0xff;
+   buffer[4] = (static_cast<int>(command.Module) >> 8) & 0xff;
+   buffer[5] = static_cast<int>(command.Module) & 0xff;
 
-   buffer[6] = (command.Action >> 8) & 0xff;
-   buffer[7] = command.Action & 0xff;
+   buffer[6] = (static_cast<int>(command.Action) >> 8) & 0xff;
+   buffer[7] = static_cast<int>(command.Action) & 0xff;
 
    buffer[8] = (command.param1 >> 8) & 0xff;
    buffer[9] = command.param1 & 0xff;
@@ -98,5 +98,5 @@ std::string & OpenALRF::operator<<(std::string & stream, const OrderedCommand & 
 
 OpenALRF::Command OpenALRF::Command::Empty()
 {
-   return Command{modVoid, actVoid, 0, 0, 0, ""};
+   return Command{OpenALRF::Module::Void, OpenALRF::Action::Void, 0, 0, 0, ""};
 }
