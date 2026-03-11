@@ -38,4 +38,4 @@ namespace OpenALRF
       static_assert(std::is_trivial<T>::value, "May not pass a class to CopyMem");
       memcpy(pDest, pSource, sizeof(T));
    }
-};
+}; // namespace OpenALRF

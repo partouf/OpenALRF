@@ -11,4 +11,4 @@ namespace OpenALRF
       virtual void Add(Command ACmd) = 0;
       virtual void Process() = 0;
    };
-};
+}; // namespace OpenALRF

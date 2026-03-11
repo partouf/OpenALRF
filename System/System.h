@@ -1,8 +1,8 @@
 #pragma once
 
-#include <string>
-#include "Module.h"
 #include "../Common/Types.h"
+#include "Module.h"
+#include <string>
 
 namespace OpenALRF
 {
@@ -10,6 +10,7 @@ namespace OpenALRF
    {
    protected:
       OpenALRF::Status SuggestedStatus;
+
    public:
       virtual OpenALRF::Status CurrentStatus() const;
       virtual void ChangeStatus(OpenALRF::Status ANewStatus);
@@ -22,4 +23,4 @@ namespace OpenALRF
 
       virtual bool ShouldQuit() = 0;
    };
-};
+}; // namespace OpenALRF

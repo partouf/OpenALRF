@@ -1,7 +1,7 @@
 #pragma once
 
-#include <cstdint>
 #include "../Common/Types.h"
+#include <cstdint>
 
 namespace OpenALRF
 {
@@ -20,8 +20,8 @@ namespace OpenALRF
       double Data2;
       double Data3;
    };
-   std::ostream& operator<< (std::ostream& stream, const Sensor3DData& sensordata);
-   std::string& operator<< (std::string& stream, const Sensor3DData& sensordata);
+   std::ostream &operator<<(std::ostream &stream, const Sensor3DData &sensordata);
+   std::string &operator<<(std::string &stream, const Sensor3DData &sensordata);
 
    struct OrientationPRY
    {
@@ -75,4 +75,4 @@ namespace OpenALRF
 
       unitTicks = 80
    };
-};
+}; // namespace OpenALRF

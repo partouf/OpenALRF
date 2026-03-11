@@ -11,7 +11,7 @@ OpenALRF::ISensor::ISensor(OpenALRF::sensorid_t AIdentifier) : IModule()
    Type = sensorUnknown;
    UsedUnit = unitUnknown;
    Origin = sensoriLocal;
-   
+
    OpenALRF::NullifyMem(LatestSensorData);
 }
 
@@ -50,7 +50,7 @@ std::string OpenALRF::ISensor::GetStatusInfo() const
    sprintf(val, "<UsedUnit>%d</UsedUnit>", UsedUnit);
    info += val;
 
-   if (LatestSensorData.Timestamp != 0)
+   if(LatestSensorData.Timestamp != 0)
    {
       info += "<LatestSensorData>";
       info += Sensor3DDataAsXML(LatestSensorData);

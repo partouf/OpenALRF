@@ -12,4 +12,4 @@ namespace OpenALRF
 
       static OpenALRF::sensor_t GetSensorTypeFromName(const std::string AType);
    };
-}
+} // namespace OpenALRF

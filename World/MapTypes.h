@@ -4,21 +4,24 @@
 
 namespace OpenALRF
 {
-   enum Legenda {
-      MapValueFreeToMove = 32,     // ' '
-      MapValuePath = 42,           // '*'
-      MapValueBadGround = 44,      // ','
-      MapValueObstructed = 65,     // 'A'
-      MapValueUnknown = 90         // 'Z'
+   enum Legenda
+   {
+      MapValueFreeToMove = 32, // ' '
+      MapValuePath = 42, // '*'
+      MapValueBadGround = 44, // ','
+      MapValueObstructed = 65, // 'A'
+      MapValueUnknown = 90 // 'Z'
    };
 
-   struct Position {
+   struct Position
+   {
       double Longitude;
       double Latitude;
       double Direction;
    };
 
-   struct MapPosition {
+   struct MapPosition
+   {
       int X;
       int Y;
    };
@@ -31,6 +34,7 @@ namespace OpenALRF
    private:
       int X;
       int Y;
+
    public:
       EMapCoordsOutOfBounds(int X, int Y);
    };
@@ -66,4 +70,4 @@ namespace OpenALRF
    public:
       virtual IMapReader *GetCurrentMap() = 0;
    };
-};
+}; // namespace OpenALRF

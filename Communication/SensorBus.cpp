@@ -1,7 +1,10 @@
 #include "SensorBus.h"
 #include <algorithm>
 
-void OpenALRF::SensorBus::Broadcast(const sensorid_t AID, const sensor_t ASensorType, const sensorunit_t AUnitUsed, const Sensor3DData ASensorData)
+void OpenALRF::SensorBus::Broadcast(const sensorid_t AID,
+                                    const sensor_t ASensorType,
+                                    const sensorunit_t AUnitUsed,
+                                    const Sensor3DData ASensorData)
 {
    SensorBusData3D Data;
    Data.ID = AID;
@@ -15,12 +18,12 @@ void OpenALRF::SensorBus::Broadcast(const sensorid_t AID, const sensor_t ASensor
 
 void OpenALRF::SensorBus::Broadcast(const SensorBusData3D ABusSensorData)
 {
-   for (auto Listener : SubscriberInstances)
+   for(auto Listener : SubscriberInstances)
    {
-      if (Listener != nullptr)
+      if(Listener != nullptr)
       {
          auto filter = Listener->GetIDFilter();
-         if ((filter == ABusSensorData.ID) || (filter == ALLSENSORS))
+         if((filter == ABusSensorData.ID) || (filter == ALLSENSORS))
          {
             Listener->NewSensorData(ABusSensorData);
          }
@@ -32,7 +35,7 @@ std::string OpenALRF::SensorBus::GetStatusInfo() const
 {
    std::string listeners;
 
-   for (auto Listener : SubscriberInstances)
+   for(auto Listener : SubscriberInstances)
    {
       sensorid_t filter = Listener->GetIDFilter();
 
@@ -56,7 +59,7 @@ void OpenALRF::SensorBus::Subscribe(ISensor3DBusListener *AListener)
 void OpenALRF::SensorBus::Unsubscribe(ISensor3DBusListener *AListener)
 {
    auto Found = std::find(SubscriberInstances.begin(), SubscriberInstances.end(), AListener);
-   if (Found != SubscriberInstances.end())
+   if(Found != SubscriberInstances.end())
    {
       SubscriberInstances.erase(Found);
    }

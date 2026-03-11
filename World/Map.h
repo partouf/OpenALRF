@@ -7,7 +7,7 @@
 
 namespace OpenALRF
 {
-   class Map20x20m: public IMapReaderWriter
+   class Map20x20m : public IMapReaderWriter
    {
    protected:
       std::string Filename;
@@ -19,6 +19,7 @@ namespace OpenALRF
       inline bool IsOutOfBounds(int X, int Y) const;
 
       void LoadFromFile();
+
    public:
       Map20x20m(std::string AFilename);
 
@@ -38,6 +39,7 @@ namespace OpenALRF
 
       inline bool IsOutOfBounds(int X, int Y) const;
       void ClearMap();
+
    public:
       Map8x8m();
 
@@ -45,4 +47,4 @@ namespace OpenALRF
 
       virtual void SetMapValue(int X, int Y, double AValue) override;
    };
-};
+}; // namespace OpenALRF

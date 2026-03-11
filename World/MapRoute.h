@@ -20,6 +20,7 @@ namespace OpenALRF
       const IMapReader *CurrentMap;
       int SearchState;
       degrees_t CurrentAngle;
+
    public:
       MapRoute(const OpenALRF::IMapReader *AMap);
       ~MapRoute();
@@ -28,4 +29,4 @@ namespace OpenALRF
 
       OpenALRF::MapSearchNode *GetNextSolutionNode();
    };
-}
+} // namespace OpenALRF

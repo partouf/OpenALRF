@@ -1,14 +1,15 @@
 #pragma once
 
-#include "SensorBusTypes.h"
 #include "../Sensors/Sensors.h"
+#include "SensorBusTypes.h"
 
 namespace OpenALRF
 {
-   class ISensor3DBusListener: public ISensor
+   class ISensor3DBusListener : public ISensor
    {
    protected:
       sensorid_t SensorIDFilter;
+
    public:
       ISensor3DBusListener(const OpenALRF::sensorid_t ASensorIDFilter);
 
@@ -16,4 +17,4 @@ namespace OpenALRF
 
       virtual void NewSensorData(const OpenALRF::SensorBusData3D ABusData) = 0;
    };
-};
+}; // namespace OpenALRF

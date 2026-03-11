@@ -10,13 +10,14 @@ namespace OpenALRF
       bool RebootTriggered;
 
       void SystemCmd(std::string ACommand);
+
    public:
       SystemLinux();
 
       void RebootNow() override;
-      
+
       void RestartNetworkInterface(const std::string AInterfaceName) override;
 
       bool ShouldQuit() override;
    };
-};
+}; // namespace OpenALRF

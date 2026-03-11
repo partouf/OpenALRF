@@ -1,7 +1,7 @@
 #pragma once
 
-#include <string>
 #include "../System/Module.h"
+#include <string>
 
 namespace OpenALRF
 {
@@ -12,4 +12,4 @@ namespace OpenALRF
 
       virtual void SendToStation(const std::string AMessage) = 0;
    };
-};
+}; // namespace OpenALRF

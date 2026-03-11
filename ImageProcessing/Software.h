@@ -18,7 +18,9 @@ namespace OpenALRF
       OpenALRF::CapturedImage ApplyMask3x3Median(double mask[3][3], const OpenALRF::CapturedImage AInputImage);
       OpenALRF::CapturedImage ApplyMask3x3(double mask[3][3], const OpenALRF::CapturedImage AInputImage);
       OpenALRF::CapturedImage ApplyMask5x5(double mask[5][5], const OpenALRF::CapturedImage AInputImage);
-      OpenALRF::CapturedImage ApplyMask5x5SkipColor(double mask[5][5], const OpenALRF::CapturedImage AInputImage, unsigned char ASkipColor);
+      OpenALRF::CapturedImage ApplyMask5x5SkipColor(double mask[5][5],
+                                                    const OpenALRF::CapturedImage AInputImage,
+                                                    unsigned char ASkipColor);
       OpenALRF::CapturedImage ApplyMask5x5Median(double mask[5][5], const OpenALRF::CapturedImage AInputImage);
       bool AllocateBuffer(CapturedImage *AImage);
 
@@ -31,7 +33,7 @@ namespace OpenALRF
 
       std::vector<unsigned char> BlowUpVectorContrast(std::vector<unsigned char> ANumbers);
       OpenALRF::CapturedImage PlaneDetection(const OpenALRF::CapturedImage AInputImage);
-      
+
       OpenALRF::CapturedImage SimularityFill(const OpenALRF::CapturedImage AInputImage);
 
       OpenALRF::CapturedImage BlowUpImageContrast(const OpenALRF::CapturedImage AInputImage);
@@ -40,6 +42,7 @@ namespace OpenALRF
 
       bool MakeGrayscaleImage();
       unsigned char GetAverageGrayByte() const;
+
    public:
       ImageProcessingSoftware();
       ~ImageProcessingSoftware();
@@ -48,4 +51,4 @@ namespace OpenALRF
 
       bool MakeObjectMask();
    };
-};
+}; // namespace OpenALRF

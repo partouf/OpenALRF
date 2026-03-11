@@ -9,7 +9,7 @@ void OpenALRF::MapRoute::DoSearch(OpenALRF::MapSearchNode &StartNode, OpenALRF::
    do
    {
       SearchState = Searcher.SearchStep();
-   } while (SearchState == STLAStar::SEARCH_STATE_SEARCHING);
+   } while(SearchState == STLAStar::SEARCH_STATE_SEARCHING);
 }
 
 OpenALRF::MapRoute::MapRoute(const OpenALRF::IMapReader *AMap)
@@ -20,7 +20,7 @@ OpenALRF::MapRoute::MapRoute(const OpenALRF::IMapReader *AMap)
 
 OpenALRF::MapRoute::~MapRoute()
 {
-   if (SearchState == STLAStar::SEARCH_STATE_SUCCEEDED)
+   if(SearchState == STLAStar::SEARCH_STATE_SUCCEEDED)
    {
       Searcher.FreeSolutionNodes();
    }
@@ -28,7 +28,7 @@ OpenALRF::MapRoute::~MapRoute()
    Searcher.EnsureMemoryFreed();
 }
 
-OpenALRF::MapSearchNode * OpenALRF::MapRoute::GetNextSolutionNode()
+OpenALRF::MapSearchNode *OpenALRF::MapRoute::GetNextSolutionNode()
 {
    return Searcher.GetSolutionNext();
 }

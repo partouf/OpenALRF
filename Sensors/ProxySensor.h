@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Sensors.h"
 #include "../Communication/SensorBusListener.h"
+#include "Sensors.h"
 
 namespace OpenALRF
 {
@@ -18,11 +18,10 @@ namespace OpenALRF
 
       virtual bool IsPowered() const override;
 
-      virtual bool NextValue(OpenALRF::Sensor3DData & AValue) override;
+      virtual bool NextValue(OpenALRF::Sensor3DData &AValue) override;
 
 
       // Inherited via ISensor3DBusListener
       virtual void NewSensorData(const SensorBusData3D ABusData) override;
-
    };
-};
+}; // namespace OpenALRF

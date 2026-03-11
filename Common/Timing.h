@@ -6,4 +6,4 @@ namespace OpenALRF
 {
    timestamp_t GetCurrentTimestamp();
    std::string GetTimestampAsString(OpenALRF::timestamp_t ATimestamp);
-};
+}; // namespace OpenALRF

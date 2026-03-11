@@ -1,8 +1,8 @@
 #pragma once
 
-#include <cstdint>
-#include "../World/MapTypes.h"
 #include "../System/Module.h"
+#include "../World/MapTypes.h"
+#include <cstdint>
 
 namespace OpenALRF
 {
@@ -15,4 +15,4 @@ namespace OpenALRF
       virtual void Right(degrees_t AAngle) = 0;
       virtual void Stop() = 0;
    };
-};
+}; // namespace OpenALRF

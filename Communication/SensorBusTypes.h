@@ -1,12 +1,12 @@
 #pragma once
 
-#include <cstdint>
-#include "../Sensors/Sensors.h"
 #include "../Sensors/SensorTypes.h"
+#include "../Sensors/Sensors.h"
+#include <cstdint>
 
 namespace OpenALRF
 {
-   #define ALLSENSORS 0
+#define ALLSENSORS 0
 
    struct SensorConfig
    {
@@ -22,6 +22,6 @@ namespace OpenALRF
       sensorunit_t UnitUsed;
       Sensor3DData Data;
    };
-   std::ostream& operator<< (std::ostream& stream, const SensorBusData3D& busdata);
-   std::string& operator<< (std::string& stream, const SensorBusData3D& busdata);
-};
+   std::ostream &operator<<(std::ostream &stream, const SensorBusData3D &busdata);
+   std::string &operator<<(std::string &stream, const SensorBusData3D &busdata);
+}; // namespace OpenALRF

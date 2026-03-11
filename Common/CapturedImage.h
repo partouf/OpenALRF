@@ -13,4 +13,4 @@ namespace OpenALRF
       unsigned int Channels;
       int64_t Sum;
    };
-};
+}; // namespace OpenALRF

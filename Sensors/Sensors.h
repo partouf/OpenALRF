@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../System/Module.h"
 #include "../Common/Types.h"
+#include "../System/Module.h"
 #include "SensorTypes.h"
 
 namespace OpenALRF
@@ -15,7 +15,7 @@ namespace OpenALRF
       sensororigin_t Origin;
 
       Sensor3DData LatestSensorData;
-      
+
    public:
       ISensor(sensorid_t AIdentifier);
 
@@ -38,4 +38,4 @@ namespace OpenALRF
    };
 
    std::string Sensor3DDataAsXML(const OpenALRF::Sensor3DData AValue);
-};
+}; // namespace OpenALRF

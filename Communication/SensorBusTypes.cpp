@@ -1,7 +1,7 @@
 #include "SensorBusTypes.h"
 #include <sstream>
 
-std::ostream & OpenALRF::operator<<(std::ostream & stream, const SensorBusData3D & busdata)
+std::ostream &OpenALRF::operator<<(std::ostream &stream, const SensorBusData3D &busdata)
 {
    std::string streambuffer;
    streambuffer << busdata;
@@ -10,7 +10,7 @@ std::ostream & OpenALRF::operator<<(std::ostream & stream, const SensorBusData3D
    return stream;
 }
 
-std::string & OpenALRF::operator<<(std::string & stream, const SensorBusData3D & busdata)
+std::string &OpenALRF::operator<<(std::string &stream, const SensorBusData3D &busdata)
 {
    std::string streambuffer;
    streambuffer.reserve(37);

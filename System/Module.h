@@ -9,4 +9,4 @@ namespace OpenALRF
    public:
       virtual std::string GetStatusInfo() const = 0;
    };
-};
+}; // namespace OpenALRF

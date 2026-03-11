@@ -1,10 +1,10 @@
 #pragma once
 
-#include "AutoPilot.h"
-#include "RemotePilot.h"
+#include "../Command/CommandQueue.h"
 #include "../World/AStarMapNode.h"
 #include "../World/MapTypes.h"
-#include "../Command/CommandQueue.h"
+#include "AutoPilot.h"
+#include "RemotePilot.h"
 
 namespace OpenALRF
 {
@@ -15,13 +15,18 @@ namespace OpenALRF
       IMapProvider *MapProvider;
       ICommandQueue *CommandQueue;
 
-      OpenALRF::degrees_t MakeCommandsFromMapSearchDifference(const OpenALRF::MapSearchNode *ANodeCurrent, const OpenALRF::MapSearchNode *ANodeNext, const OpenALRF::degrees_t ACurrentAngle);
+      OpenALRF::degrees_t MakeCommandsFromMapSearchDifference(const OpenALRF::MapSearchNode *ANodeCurrent,
+                                                              const OpenALRF::MapSearchNode *ANodeNext,
+                                                              const OpenALRF::degrees_t ACurrentAngle);
       void findSolutionForMap(const std::string AInMapFile);
 
-      void FullRoute(const OpenALRF::IMapReader * AMap, OpenALRF::MapSearchNode &StartNode, OpenALRF::MapSearchNode &EndNode);
-   public:
-      AutoPilotDefault(IMapProvider *AMapProvider, ICommandQueue * ACommandQueue);
+      void FullRoute(const OpenALRF::IMapReader *AMap,
+                     OpenALRF::MapSearchNode &StartNode,
+                     OpenALRF::MapSearchNode &EndNode);
 
-      void IdleStep(const OpenALRF::IMapReader * AMap, OpenALRF::MapSearchNode &StartNode, OpenALRF::MapSearchNode &EndNode);
+   public:
+      AutoPilotDefault(IMapProvider *AMapProvider, ICommandQueue *ACommandQueue);
+
+      void IdleStep(const OpenALRF::IMapReader *AMap, OpenALRF::MapSearchNode &StartNode, OpenALRF::MapSearchNode &EndNode);
    };
-}
+} // namespace OpenALRF

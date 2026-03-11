@@ -9,7 +9,8 @@ void OpenALRF::SystemLinux::SystemCmd(std::string ACommand)
    std::cout << ACommand << std::endl;
 #else
    std::cout << ACommand << std::endl;
-   ::system(ACommand.c_str());
+   int ret = ::system(ACommand.c_str());
+   (void)ret;
 #endif
 }
 

@@ -8,4 +8,4 @@ namespace OpenALRF
    {
    public:
    };
-}
+} // namespace OpenALRF

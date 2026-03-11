@@ -1,7 +1,8 @@
 #include "ProxySensor.h"
 #include <cstring>
 
-OpenALRF::ProxySensor::ProxySensor(OpenALRF::sensorid_t AIdentifier) : ISensor3DBusListener(AIdentifier)
+OpenALRF::ProxySensor::ProxySensor(OpenALRF::sensorid_t AIdentifier)
+: ISensor3DBusListener(AIdentifier)
 {
    Origin = sensoriRemote;
 }
@@ -21,7 +22,7 @@ bool OpenALRF::ProxySensor::IsPowered() const
 
 bool OpenALRF::ProxySensor::NextValue(OpenALRF::Sensor3DData &AValue)
 {
-   if (LatestSensorData.Timestamp != 0)
+   if(LatestSensorData.Timestamp != 0)
    {
       AValue = LatestSensorData;
 

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../System/Module.h"
 #include "../Common/CapturedImage.h"
+#include "../System/Module.h"
 
 namespace OpenALRF
 {
@@ -11,4 +11,4 @@ namespace OpenALRF
       virtual void TakePicture() = 0;
       virtual CapturedImage GetLatestImage() = 0;
    };
-};
+}; // namespace OpenALRF

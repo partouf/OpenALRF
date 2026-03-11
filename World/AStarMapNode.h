@@ -10,6 +10,7 @@ namespace OpenALRF
    protected:
       int x;
       int y;
+
    public:
       MapSearchNode();
       MapSearchNode(int px, int py);
@@ -27,4 +28,4 @@ namespace OpenALRF
    };
 
    void SetCurrentSearchMap(const IMapReader *AMap);
-};
+}; // namespace OpenALRF

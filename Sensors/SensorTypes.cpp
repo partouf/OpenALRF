@@ -1,7 +1,7 @@
 #include "SensorTypes.h"
 #include "../Common/MemUtils.h"
 
-std::ostream & OpenALRF::operator<<(std::ostream & stream, const Sensor3DData & sensordata)
+std::ostream &OpenALRF::operator<<(std::ostream &stream, const Sensor3DData &sensordata)
 {
    std::string streambuffer;
 
@@ -11,7 +11,7 @@ std::ostream & OpenALRF::operator<<(std::ostream & stream, const Sensor3DData & 
    return stream;
 }
 
-std::string & OpenALRF::operator<<(std::string & stream, const Sensor3DData & sensordata)
+std::string &OpenALRF::operator<<(std::string &stream, const Sensor3DData &sensordata)
 {
    char data[32];
 

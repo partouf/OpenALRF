@@ -1,9 +1,9 @@
 #include "Map.h"
 
-#include <iostream>
-#include <fstream>
-#include <cstring>
 #include "../Common/MemUtils.h"
+#include <cstring>
+#include <fstream>
+#include <iostream>
 
 inline bool OpenALRF::Map20x20m::IsOutOfBounds(int X, int Y) const
 {
@@ -16,12 +16,12 @@ void OpenALRF::Map20x20m::LoadFromFile()
 
    std::ifstream fs;
    fs.open(Filename);
-   if (fs.is_open())
+   if(fs.is_open())
    {
       int y = 0;
-      while (getline(fs, line))
+      while(getline(fs, line))
       {
-         for (int i = 0; i < 20; i++)
+         for(int i = 0; i < 20; i++)
          {
             MeterMap[y][i] = line[i];
          }
@@ -40,9 +40,9 @@ void OpenALRF::Map20x20m::SaveToFile(const std::string ANewFilename)
 
    std::ofstream fs;
    fs.open(Filename);
-   if (fs.is_open())
+   if(fs.is_open())
    {
-      for (int y = 0; y < 20; ++y)
+      for(int y = 0; y < 20; ++y)
       {
          fs.write(reinterpret_cast<const char *>(&MeterMap[y]), 20);
          fs << std::endl;
@@ -71,7 +71,7 @@ void OpenALRF::Map20x20m::ClearMap()
 
 double OpenALRF::Map20x20m::GetMapValue(int X, int Y) const
 {
-   if (IsOutOfBounds(X, Y))
+   if(IsOutOfBounds(X, Y))
    {
       return static_cast<double>(OpenALRF::MapValueUnknown);
    }
@@ -81,7 +81,7 @@ double OpenALRF::Map20x20m::GetMapValue(int X, int Y) const
 
 void OpenALRF::Map20x20m::SetMapValue(int X, int Y, double AValue)
 {
-   if (IsOutOfBounds(X, Y))
+   if(IsOutOfBounds(X, Y))
    {
       throw new EMapCoordsOutOfBounds(X, Y);
    }
@@ -99,14 +99,14 @@ void OpenALRF::Map8x8m::ClearMap()
    NullifyMem(MeterMap);
 }
 
-OpenALRF::Map8x8m::Map8x8m(): IMapReaderWriter()
+OpenALRF::Map8x8m::Map8x8m() : IMapReaderWriter()
 {
    ClearMap();
 }
 
 double OpenALRF::Map8x8m::GetMapValue(int X, int Y) const
 {
-   if (IsOutOfBounds(X, Y))
+   if(IsOutOfBounds(X, Y))
    {
       throw new EMapCoordsOutOfBounds(X, Y);
    }
@@ -116,7 +116,7 @@ double OpenALRF::Map8x8m::GetMapValue(int X, int Y) const
 
 void OpenALRF::Map8x8m::SetMapValue(int X, int Y, double AValue)
 {
-   if (IsOutOfBounds(X, Y))
+   if(IsOutOfBounds(X, Y))
    {
       throw new EMapCoordsOutOfBounds(X, Y);
    }
